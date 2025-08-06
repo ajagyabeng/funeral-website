@@ -22,12 +22,16 @@
       max-width: 800px;
       height: 80vh;
       margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: auto; /* Ensures scrolling if PDF is larger than container */
     }
-
-    embed {
+    iframe {
       width: 100%;
       height: 100%;
       border: none;
+      object-fit: contain; /* Scales PDF to fit while maintaining aspect ratio */
     }
 
     .fallback {
@@ -71,7 +75,7 @@
     <!-- PDF Embed Section -->
     <div class="w-full px-4 pb-8 flex justify-center">
       <div class="pdf-container rounded-lg overflow-hidden shadow-md border">
-        <embed src="https://drive.google.com/file/d/1MDLreDgb-QAzHzE8VQc7iz3jP0svdqnu/preview" type="application/pdf">
+        <iframe src="https://drive.google.com/file/d/1MDLreDgb-QAzHzE8VQc7iz3jP0svdqnu/preview" frameborder="0"></iframe>
       </div>
     </div>
     <div class="fallback">
